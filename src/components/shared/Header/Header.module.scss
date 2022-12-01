@@ -1,0 +1,36 @@
+@import '../../../assets/styles/index.module.scss';
+
+.root {
+  @include paddingResponsive();
+  height: 47px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  z-index: 3;
+  
+  @media (min-width: 768px)  {
+    height: 68px;
+    padding-top: 40px;
+  }
+  
+  .logo {
+    height: 100%;
+    width: fit-content;
+  }
+
+  .nav {
+    color: $primary;
+    font-size: $xx-small;
+    display: flex;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+
+    @media (min-width: 768px)  {
+      font-size: $medium;
+      gap: 57px;
+    }
+  }
+}

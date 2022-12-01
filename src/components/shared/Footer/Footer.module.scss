@@ -1,0 +1,33 @@
+@import '../../../assets/styles/index.module.scss';
+
+.root {
+  height: 100px;
+  padding: 62px 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+
+  @media (min-width: 768px) {
+    gap: 28.56px;
+  }
+
+  .logo {
+    height: 39.44px;
+  }
+
+  .copyrights {
+    background-color: black !important;
+    color: white;
+    font-size: $xx-small;
+    height: 46px;
+    display: flex;
+    align-items: flex-end;
+
+    @media (min-width: 768px) {
+      font-size: $medium;
+    }
+  }
+}
