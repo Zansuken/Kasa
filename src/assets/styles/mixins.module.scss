@@ -6,3 +6,14 @@
     padding-right: 100px;
   }
 }
+
+@mixin pageDefaultSetup {
+  height: 100%;
+}
+
+@mixin flexColumnCentered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
