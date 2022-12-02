@@ -13,5 +13,15 @@
 
   @media (min-width: 768px) {
     background-color: $light-grey;
+    display: grid;
+    grid-template-columns: repeat(3, 340px);
+    grid-template-rows: repeat(7, 340px);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    justify-content: center;
+    border-radius: $border-radius--large;
+    margin-top: 43px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 }

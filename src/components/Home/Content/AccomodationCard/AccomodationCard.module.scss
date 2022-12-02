@@ -15,10 +15,10 @@
     position: absolute;
     object-fit: cover;
     object-position: center;
+    transition: height 0.3s ease-in-out;
   }
 
   .link {
-    // z-index: 3;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -50,4 +50,17 @@
 
     }
   }
+
+  @media (min-width: 768px) {
+    max-width: 340px;
+    min-height: 340px;
+
+
+  &:hover {
+    .cover {
+      height: 120%;
+    }
+  }
+  }
+
 }
