@@ -1,0 +1,13 @@
+@import '../../../assets/styles/index.module.scss';
+
+.root {
+  @include pageDefaultSetup();
+  @include flexColumn();
+
+  width: 100%;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    background-color: $light-grey;
+  }
+}

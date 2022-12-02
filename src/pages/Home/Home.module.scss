@@ -1,0 +1,17 @@
+@import '../../assets/styles/index.module.scss';
+
+.root {
+  @include pageDefaultSetup();
+  @include flexColumn();
+  @include paddingResponsive();
+
+  margin-top: 87px;
+  padding-top: 16px;
+  padding-bottom: 124px;
+  transition: box-shadow 0.3s ease-in-out;
+  z-index: 2;
+
+  @media (min-width: 768px) {
+    margin-top: calc(118px);
+  }
+}

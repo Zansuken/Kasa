@@ -1,0 +1,8 @@
+@import '../../../../assets/styles/index.module.scss';
+
+.root {
+  width: 100%;
+  min-height: 255px;
+  border-radius: $border-radius--medium;
+  background-color: $primary;
+}
