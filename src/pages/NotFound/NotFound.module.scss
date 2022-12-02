@@ -3,7 +3,7 @@
 .root {
   @include pageDefaultSetup();
   color: $primary;
-  font-weight: 500;
+
   .content {
     @include flexColumnCentered();
     

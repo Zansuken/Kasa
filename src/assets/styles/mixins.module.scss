@@ -9,6 +9,7 @@
 
 @mixin pageDefaultSetup {
   height: 100%;
+  background-color: white;
 }
 
 @mixin flexColumnCentered {
@@ -16,4 +17,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+  @media (min-width: 768px)  {
+    padding-top: 63px;
+  }
 }

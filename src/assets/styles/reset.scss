@@ -66,6 +66,8 @@ a {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	font-weight: 500;
+
 	&:first-of-type div {
 		background-color: white;
 	}

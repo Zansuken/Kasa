@@ -1,16 +1,20 @@
-import { createContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  FC,
+  useEffect,
+  useState,
+  PropsWithChildren,
+} from 'react';
+import {
+  AccomodationInterface,
+  AccomodationsType,
+} from '../types/accomodations';
 import accomodationsData from '../data/accomodations.json';
 
-const initialValue = {};
+export const accomodationsCtxt = createContext<AccomodationsType | null>(null);
 
-const accomodationsCtxt = createContext(initialValue);
-
-type Props = {
-  children: JSX.Element;
-};
-
-const AccomodationsCtxt = ({ children }: Props) => {
-  const [data, setData] = useState({});
+const AccomodationsCtxt: FC<PropsWithChildren> = ({ children }) => {
+  const [data, setData] = useState<AccomodationInterface[]>([]);
 
   useEffect(() => {
     setData(accomodationsData);
