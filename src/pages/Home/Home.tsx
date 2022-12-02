@@ -8,10 +8,10 @@ const Home: FC = () => {
   const accomodations = useContext(accomodationsCtxt);
 
   return (
-    <div className={classes['root']}>
+    <main className={classes['root']}>
       <Title />
       <Content accomodations={accomodations} />
-    </div>
+    </main>
   );
 };
 

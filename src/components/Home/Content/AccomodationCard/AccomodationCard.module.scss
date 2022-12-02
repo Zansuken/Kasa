@@ -5,4 +5,49 @@
   min-height: 255px;
   border-radius: $border-radius--medium;
   background-color: $primary;
+  font-size: $small;
+  position: relative;
+  overflow: hidden;
+  
+  .cover {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .link {
+    // z-index: 3;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .mask {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    .title {
+      z-index: 2;
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
+      color: white;
+    pointer-events: none;
+
+    }
+  }
 }

@@ -11,11 +11,11 @@ type Props = {
 
 const Content = ({ accomodations }: Props) => {
   return (
-    <main className={classes['root']}>
-      {accomodations?.map((accomodations: AccomodationInterface, index) => (
-        <AccomodationCard key={index} accomodation={accomodations} />
+    <ul className={classes['root']}>
+      {accomodations?.map((accomodation: AccomodationInterface, index) => (
+        <AccomodationCard key={index} accomodation={accomodation} />
       ))}
-    </main>
+    </ul>
   );
 };
 

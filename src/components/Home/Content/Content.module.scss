@@ -7,6 +7,10 @@
   width: 100%;
   gap: 20px;
 
+  .accomodationsList {
+    height: fit-content;
+  }
+
   @media (min-width: 768px) {
     background-color: $light-grey;
   }

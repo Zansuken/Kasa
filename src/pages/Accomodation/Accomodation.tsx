@@ -1,9 +1,3 @@
-import React from 'react';
-
-type Props = {};
-
-const Accomodation = (props: Props) => {
-  return <div>Accomodation</div>;
-};
+const Accomodation = () => <main>Accomodation</main>;
 
 export default Accomodation;
