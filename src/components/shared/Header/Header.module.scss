@@ -3,16 +3,21 @@
 .root {
   @include paddingResponsive();
   height: 47px;
+  width: calc(100% - 40px);
   padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease-in-out;
   background-color: white;
   z-index: 3;
+  position: fixed;
+  box-shadow: 0 -5px 5px 4px black;
   
   @media (min-width: 768px)  {
     height: 68px;
+    width: calc(100% - 200px);
     padding-top: 40px;
   }
   

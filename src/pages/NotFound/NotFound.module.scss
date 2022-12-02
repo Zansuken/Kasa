@@ -2,6 +2,7 @@
 
 .root {
   @include pageDefaultSetup();
+  height: 100%;
   color: $primary;
 
   .content {
