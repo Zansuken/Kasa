@@ -13,15 +13,19 @@
 
   @media (min-width: 768px) {
     background-color: $light-grey;
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(3, 340px);
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     grid-template-rows: repeat(7, 340px);
     grid-column-gap: 50px;
     grid-row-gap: 50px;
     justify-content: center;
+    justify-items: center;
     border-radius: $border-radius--large;
     margin-top: 43px;
     padding-top: 56px;
+    padding-right: 50px;
+    padding-left: 50px;
     padding-bottom: 56px;
   }
 }

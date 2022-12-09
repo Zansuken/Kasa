@@ -11,7 +11,7 @@ const AccomodationCard = ({ accomodation: { id, title, cover } }: Props) => {
     <li className={classes['root']}>
       <article>
         <img className={classes['cover']} src={cover} />
-        <NavLink to={`/logements/:${id}`} className={classes['link']} />
+        <NavLink to={`/logements/${id}`} className={classes['link']} />
         <div className={classes['mask']}>
           <h2 className={classes['title']}>{title}</h2>
         </div>
