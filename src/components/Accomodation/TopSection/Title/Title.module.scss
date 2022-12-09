@@ -1,0 +1,33 @@
+@import '../../../../assets/styles/index.module.scss';
+
+.root {
+  width: 100%;
+  color: $primary;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  
+  h1 {
+    font-size: $small;
+    line-height: 25.67px;
+  }
+
+  h2 {
+    font-size: $x-small;
+    line-height: 19.96px;
+  }
+
+  @media (min-width: 768px) {
+    
+    h1 {
+      font-size: $large;
+      line-height: 51.34px;
+    }
+
+    h2 {
+      font-size: $small;
+      line-height: 25.67px;
+    }
+  }
+}

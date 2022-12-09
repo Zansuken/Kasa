@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
-import Carousel from '../../components/Accomodation/Carousel/Carousel';
 import { getSelectedAccomodation } from '../../services/utils/requests';
 import { AccomodationInterface } from '../../types/accomodations';
 import classes from './Accomodation.module.scss';
+import Carousel from '../../components/Accomodation/Carousel/Carousel';
+import TopSection from '../../components/Accomodation/TopSection/TopSection';
 
 const Accomodation = () => {
   const { logementId } = useParams();
@@ -25,6 +26,13 @@ const Accomodation = () => {
   return (
     <main className={classes['root']}>
       <Carousel pictures={pictures} />
+      <TopSection
+        title={title}
+        location={location}
+        tags={tags}
+        host={host}
+        rating={rating}
+      />
     </main>
   );
 };
