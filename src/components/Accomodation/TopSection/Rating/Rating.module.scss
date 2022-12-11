@@ -1,0 +1,13 @@
+.root {
+  svg {
+    height: 18px;
+    width: 18px;
+  }
+
+  @media (min-width: 768px) {
+    svg {
+      height: 36px;
+      width: 36px;
+    }
+  }
+}

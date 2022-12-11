@@ -20,8 +20,8 @@ const TopSection: FC<Props> = ({ title, tags, location, host, rating }) => (
       <Tags tags={tags} />
     </div>
     <div className={classes['review-owner']}>
-      <Host host={host} />
       <Rating rating={rating} />
+      <Host host={host} />
     </div>
   </section>
 );

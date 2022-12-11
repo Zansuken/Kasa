@@ -16,7 +16,7 @@
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    grid-template-rows: repeat(7, 340px);
+    grid-template-rows: repeat(auto-fit, minmax(340px, 1fr));
     grid-column-gap: 50px;
     grid-row-gap: 50px;
     justify-content: center;
