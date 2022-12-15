@@ -17,6 +17,7 @@
     cursor: pointer;
     border-radius: $border-radius--small;
     z-index: 10;
+    transition: border-radius 0.3s ease-in-out;
     
     &.deployed {
       border-radius: $border-radius--small $border-radius--small 0 0;
@@ -33,7 +34,7 @@
         width: 18px;
         height: 18px;
         rotate: -270deg;
-        transition: rotate 0.7s ease-in-out;
+        transition: rotate 0.3s ease-in-out;
       }
       &.deployed {
         svg {
@@ -66,7 +67,7 @@
   .content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.7s ease-in-out, padding-top 0.7s ease-in-out, padding-bottom 0.7s ease-in-out;
+    transition: max-height 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     background: $light-grey !important;
     color: $primary;
     font-size: $xx-small;
