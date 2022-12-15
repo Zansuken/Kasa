@@ -1,5 +1,6 @@
 @import '../../../../assets/styles/index.module.scss';
 
+
 .root {
   width: 100%;
 
@@ -8,13 +9,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 12px 0 ;
+    padding: 0 6px 0 12px;
     height: 30px;
-
-    label {
-      color: white;
-      font-size: 13px;
-      line-height: 18.54px;
+    color: white;
+    font-size: 13px;
+    line-height: 18.54px;
+    cursor: pointer;
+    border-radius: $border-radius--small;
+    z-index: 10;
+    
+    &.deployed {
+      border-radius: $border-radius--small $border-radius--small 0 0;
     }
 
     button {
@@ -22,6 +27,72 @@
       background: none;
       border: none;
       padding: 0;
+      cursor: pointer;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        rotate: -270deg;
+        transition: rotate 0.7s ease-in-out;
+      }
+      &.deployed {
+        svg {
+          rotate: -90deg;
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      height: 52px;
+      font-size: $small;
+      padding-left: 20px;
+      padding-right: 9px;
+      border-radius: $border-radius--medium;
+      
+      &.deployed {
+        border-radius: $border-radius--medium $border-radius--medium 0 0;
+      }
+
+      button {
+ 
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, padding-top 0.7s ease-in-out, padding-bottom 0.7s ease-in-out;
+    background: $light-grey !important;
+    color: $primary;
+    font-size: $xx-small;
+    line-height: 17.11px;
+    font-weight: 400;
+    border-radius: 0 0 $border-radius--small $border-radius--small;
+    padding: 0 12px;
+    
+    &.deployed {
+      min-height: fit-content;
+      max-height: 100%;
+      padding-left: 12px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-right: 12px;
+    }
+
+    @media (min-width: 768px) {
+      border-radius: 0 0 $border-radius--medium $border-radius--medium;
+      font-size: $small;
+      line-height: 25.67px;
+      padding-left: 20px;
+
+      &.deployed {
+      padding-left: 20px;
+      }
     }
   }
 }

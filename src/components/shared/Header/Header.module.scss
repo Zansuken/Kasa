@@ -9,7 +9,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease-in-out;
   background-color: white;
   z-index: 3;
   position: fixed;
@@ -31,7 +30,6 @@
     font-size: $xx-small;
     display: flex;
     gap: 10px;
-    transition: all 0.3s ease-in-out;
 
     @media (min-width: 768px)  {
       font-size: $medium;

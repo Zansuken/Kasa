@@ -10,17 +10,41 @@ type Props = {
 };
 
 const CollapsingCard: FC<Props> = ({ content, label }) => {
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+  const [isDeployed, setIsDeployed] = useState<boolean>(false);
 
-  const handleIsCollapsedToggle = () => setIsCollapsed((current) => !current);
+  const handleIsDeployedToggle = () => setIsDeployed((current) => !current);
+
+  const classNameBuilder = (className?: string) => {
+    if (!isDeployed) {
+      return classes[className || ''];
+    } else {
+      return `${classes[className || '']} ${classes['deployed']}`;
+    }
+  };
+
+  const Content: FC = () => {
+    if (Array.isArray(content)) {
+      return (
+        <ul>
+          {content.map((element, index) => (
+            <li key={index}>{element}</li>
+          ))}
+        </ul>
+      );
+    }
+    return <p>{content}</p>;
+  };
 
   return (
     <div className={classes['root']}>
-      <div className={classes['dropDownAction']}>
-        <label>{label}</label>
-        <button>
+      <label className={classNameBuilder('dropDownAction')}>
+        {label}
+        <button className={classNameBuilder()} onClick={handleIsDeployedToggle}>
           <ArrowIcon />
         </button>
+      </label>
+      <div className={classNameBuilder('content')}>
+        <Content />
       </div>
     </div>
   );
