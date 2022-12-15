@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { ReactComponent as ArrowIcon } from '../../../../assets/images/arrow.svg';
 import classes from './NavButton.module.scss';
 

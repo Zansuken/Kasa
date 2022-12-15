@@ -4,6 +4,7 @@ import { AccomodationInterface } from '../../types/accomodations';
 import classes from './Accomodation.module.scss';
 import Carousel from '../../components/Accomodation/Carousel/Carousel';
 import TopSection from '../../components/Accomodation/TopSection/TopSection';
+import AccomodationDetails from '../../components/Accomodation/AccomodationDetails';
 
 const Accomodation = () => {
   const { logementId } = useParams();
@@ -11,11 +12,9 @@ const Accomodation = () => {
     logementId || ''
   );
   const {
-    cover,
     description,
     equipments,
     host,
-    id,
     location,
     pictures,
     rating,
@@ -33,6 +32,7 @@ const Accomodation = () => {
         host={host}
         rating={rating}
       />
+      <AccomodationDetails description={description} equipments={equipments} />
     </main>
   );
 };
