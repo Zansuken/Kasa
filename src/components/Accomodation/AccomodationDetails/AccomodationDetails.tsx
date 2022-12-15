@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import CollapsingCard from './CollapsingCard/CollapsingCard';
+import CollapsingCard from '../../shared/CollapsingCard/CollapsingCard';
 
-import classes from './index.module.scss';
+import classes from './AccomodationDetails.module.scss';
 
 type Props = {
   description: string;

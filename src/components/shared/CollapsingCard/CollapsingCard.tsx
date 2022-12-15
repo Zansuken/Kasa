@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 
-import { ReactComponent as ArrowIcon } from '../../../../assets/images/arrow.svg';
+import { ReactComponent as ArrowIcon } from '../../../assets/images/arrow.svg';
 
 import classes from './CollapsingCard.module.scss';
 
