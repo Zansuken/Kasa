@@ -28,6 +28,7 @@ const Carousel: FC<Props> = ({ pictures }) => {
               className={
                 index + 1 === displayedPic ? classes['displayedPic'] : ''
               }
+              alt={`Photographie ${index + 1}/${totalPics} du logement.`}
             />
           ))}
           <span

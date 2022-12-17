@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className={classes['root']}>
       <ReactLogo className={classes['logo']} />
       <div className={classes['copyrights']}>
-        <p>© 2020 Kasa. All rights reserved</p>
+        <h2>© 2020 Kasa. All rights reserved</h2>
       </div>
     </footer>
   );

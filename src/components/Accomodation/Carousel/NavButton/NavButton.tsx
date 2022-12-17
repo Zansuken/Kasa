@@ -34,6 +34,9 @@ const NavButton: FC<Props> = ({
       type="button"
       className={`${classes['root']} ${classes[direction]}`}
       onClick={handlePicChange}
+      title={`Bouton permettant ${
+        direction === 'right' ? "d'avancer" : 'de reculer'
+      } d'une photographie du logement`}
     >
       <ArrowIcon className={classes['arrow']} />
     </button>

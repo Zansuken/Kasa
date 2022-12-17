@@ -39,7 +39,11 @@ const CollapsingCard: FC<Props> = ({ content, label }) => {
     <div className={classes['root']}>
       <label className={classNameBuilder('dropDownAction')}>
         {label}
-        <button className={classNameBuilder()} onClick={handleIsDeployedToggle}>
+        <button
+          className={classNameBuilder()}
+          onClick={handleIsDeployedToggle}
+          title={`Deploie les détails de: ${label}`}
+        >
           <ArrowIcon />
         </button>
       </label>

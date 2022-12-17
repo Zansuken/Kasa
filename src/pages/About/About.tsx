@@ -14,7 +14,11 @@ const About: FC = () => {
   return (
     <main className={classes['root']}>
       <div className={classes['cover']}>
-        <img className={classes['coverImage']} src={coverImg} />
+        <img
+          className={classes['coverImage']}
+          src={coverImg}
+          alt={'Paysage montagneux'}
+        />
       </div>
       <section className={classes['aboutCards']}>
         {aboutData.map(({ label, content }, index) => (
