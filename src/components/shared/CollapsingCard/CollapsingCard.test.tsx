@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import CollapsingCard from './CollapsingCard';
 
 describe('Render CollapsingCard correctly', () => {
@@ -23,6 +23,12 @@ describe('Render CollapsingCard correctly', () => {
 
   const { PropsWithoutArray, PropsWithArray } = MockedProps;
 
+  const clickOnBtnEvent = (button: HTMLElement) =>
+    fireEvent(
+      button,
+      new MouseEvent('click', { bubbles: true, cancelable: true })
+    );
+
   describe('With string as content', () => {
     const { label, content } = PropsWithoutArray;
 
@@ -44,6 +50,18 @@ describe('Render CollapsingCard correctly', () => {
 
       expect(screen.getByText(content)).toBeInTheDocument();
     });
+
+    it('Change the className of content when clicking on the button.', () => {
+      render(<CollapsingCard {...PropsWithoutArray} />);
+      const content = screen.getByTestId('deploying-card-content');
+      const button = screen.getByTestId('deploying-card');
+
+      expect(content).toHaveClass('content');
+
+      clickOnBtnEvent(button);
+
+      expect(content).toHaveClass('content deployed');
+    });
   });
 
   describe('With string[] as content', () => {
@@ -56,9 +74,9 @@ describe('Render CollapsingCard correctly', () => {
 
     it('Render the button.', () => {
       render(<CollapsingCard {...PropsWithArray} />);
-      const button = screen.queryByTestId('deploying-card');
+      const button = screen.getByTestId('deploying-card');
 
-      expect(button).toBeDefined();
+      expect(button).toBeInTheDocument();
     });
 
     it('Render the content.', () => {
@@ -69,6 +87,18 @@ describe('Render CollapsingCard correctly', () => {
       const items = getAllByRole('listitem');
 
       expect(items.length).toBe(content.length);
+    });
+
+    it('Change the className of content when clicking on the button.', () => {
+      render(<CollapsingCard {...PropsWithArray} />);
+      const content = screen.getByTestId('deploying-card-content');
+      const button = screen.getByTestId('deploying-card');
+
+      expect(content).toHaveClass('content');
+
+      clickOnBtnEvent(button);
+
+      expect(content).toHaveClass('content deployed');
     });
   });
 });

@@ -48,7 +48,10 @@ const CollapsingCard: FC<Props> = ({ content, label }) => {
           <ArrowIcon />
         </button>
       </label>
-      <div className={classNameBuilder('content')}>
+      <div
+        className={classNameBuilder('content')}
+        data-testid="deploying-card-content"
+      >
         <Content />
       </div>
     </div>
