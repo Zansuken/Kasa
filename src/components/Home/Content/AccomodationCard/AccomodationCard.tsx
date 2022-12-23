@@ -14,11 +14,13 @@ const AccomodationCard = ({ accomodation: { id, title, cover } }: Props) => {
           className={classes['cover']}
           src={cover}
           alt={`Photographie du logement: ${title}`}
+          data-testid="accomodation-image"
         />
         <NavLink
           to={`/logements/${id}`}
           className={classes['link']}
           title={'Affiche les détails du logement'}
+          data-testid="accomodation-link"
         />
         <div className={classes['mask']}>
           <h2 className={classes['title']}>{title}</h2>
