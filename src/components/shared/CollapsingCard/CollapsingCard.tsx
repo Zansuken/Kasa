@@ -43,6 +43,7 @@ const CollapsingCard: FC<Props> = ({ content, label }) => {
           className={classNameBuilder()}
           onClick={handleIsDeployedToggle}
           title={`Deploie les détails de: ${label}`}
+          data-testid="deploying-card"
         >
           <ArrowIcon />
         </button>
