@@ -1,3 +1,4 @@
+import { FC, PropsWithChildren } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/shared/Footer/Footer';
 import Header from './components/shared/Header/Header';
@@ -7,9 +8,13 @@ import Accomodation from './pages/Accomodation/Accomodation';
 import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
 
+export const CustomRouter: FC<PropsWithChildren> = ({ children }) => (
+  <BrowserRouter>{children}</BrowserRouter>
+);
+
 const App = () => (
   <AccomodationsCtxt>
-    <BrowserRouter>
+    <CustomRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -18,7 +23,7 @@ const App = () => (
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </CustomRouter>
   </AccomodationsCtxt>
 );
 

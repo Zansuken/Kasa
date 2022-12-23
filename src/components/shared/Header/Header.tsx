@@ -10,7 +10,7 @@ const Header: FC = () => {
 
   return (
     <header className={classes['root']}>
-      <ReactLogo className={classes['logo']} />
+      <ReactLogo data-testid="header-logo" className={classes['logo']} />
       <nav className={classes['nav']}>
         <NavLink
           to="/"
