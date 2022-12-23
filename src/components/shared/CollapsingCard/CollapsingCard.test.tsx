@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import CollapsingCard from './CollapsingCard';
 
-describe('Render CollapsingCard correctly', () => {
+describe('Render CollapsingCard correctly.', () => {
   const MockedProps = {
     PropsWithoutArray: {
       content:
@@ -29,7 +29,7 @@ describe('Render CollapsingCard correctly', () => {
       new MouseEvent('click', { bubbles: true, cancelable: true })
     );
 
-  describe('With string as content', () => {
+  describe('With string as content.', () => {
     const { label, content } = PropsWithoutArray;
 
     it('Render the label.', () => {
@@ -64,7 +64,7 @@ describe('Render CollapsingCard correctly', () => {
     });
   });
 
-  describe('With string[] as content', () => {
+  describe('With string[] as content.', () => {
     const { label, content } = PropsWithArray;
 
     it('Render the label.', () => {

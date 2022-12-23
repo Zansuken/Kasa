@@ -1,10 +1,11 @@
-import classes from './Footer.module.scss';
+import { FC } from 'react';
 import { ReactComponent as ReactLogo } from '../../../assets/images/LOGO_WHITE.svg';
+import classes from './Footer.module.scss';
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <footer className={classes['root']}>
-      <ReactLogo className={classes['logo']} />
+      <ReactLogo data-testid="footer-logo" className={classes['logo']} />
       <div className={classes['copyrights']}>
         <h2>© 2020 Kasa. All rights reserved</h2>
       </div>
