@@ -1,24 +1,23 @@
 @import '../../../assets/styles/index.module.scss';
 
-
 .root {
   width: 100%;
 
   .dropDownAction {
-    background: $primary !important;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 6px 0 12px;
-    height: 30px;
-    color: white;
-    font-size: 13px;
-    line-height: 18.54px;
-    cursor: pointer;
+    background: $primary !important;
     border-radius: $border-radius--small;
-    z-index: 10;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-size: 13px;
+    height: 30px;
+    justify-content: space-between;
+    line-height: 18.54px;
+    padding: 0 6px 0 12px;
     transition: border-radius 0.3s ease-in-out;
-    
+    z-index: 10;
+
     &.deployed {
       border-radius: $border-radius--small $border-radius--small 0 0;
     }
@@ -27,14 +26,14 @@
       appearance: none;
       background: none;
       border: none;
-      padding: 0;
       cursor: pointer;
+      padding: 0;
 
       svg {
-        width: 18px;
         height: 18px;
         rotate: -270deg;
         transition: rotate 0.3s ease-in-out;
+        width: 18px;
       }
       &.deployed {
         svg {
@@ -43,56 +42,56 @@
       }
     }
 
-    @media (min-width: 768px) {
-      height: 52px;
+    @include tabletToDesktop {
+      border-radius: $border-radius--medium;
       font-size: $small;
+      height: 52px;
       padding-left: 20px;
       padding-right: 9px;
-      border-radius: $border-radius--medium;
-      
+
       &.deployed {
         border-radius: $border-radius--medium $border-radius--medium 0 0;
       }
 
       button {
- 
         svg {
-          width: 32px;
           height: 32px;
+          width: 32px;
         }
       }
     }
   }
 
   .content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     background: $light-grey !important;
+    border-radius: 0 0 $border-radius--small $border-radius--small;
     color: $primary;
     font-size: $xx-small;
-    line-height: 17.11px;
     font-weight: 400;
-    border-radius: 0 0 $border-radius--small $border-radius--small;
+    line-height: 17.11px;
+    max-height: 0;
+    overflow: hidden;
     padding: 0 12px;
-    
+    transition: max-height 0.3s ease-in-out, padding-top 0.3s ease-in-out,
+    padding-bottom 0.3s ease-in-out;
+
     &.deployed {
-      min-height: fit-content;
       max-height: 100%;
-      padding-left: 12px;
-      padding-top: 16px;
+      min-height: fit-content;
       padding-bottom: 16px;
+      padding-left: 12px;
       padding-right: 12px;
+      padding-top: 16px;
     }
 
-    @media (min-width: 768px) {
+    @include tabletToDesktop {
       border-radius: 0 0 $border-radius--medium $border-radius--medium;
       font-size: $small;
       line-height: 25.67px;
       padding-left: 20px;
 
       &.deployed {
-      padding-left: 20px;
+        padding-left: 20px;
       }
     }
   }

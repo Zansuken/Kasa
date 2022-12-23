@@ -2,27 +2,29 @@
 
 .root {
   @include pageDefaultSetup();
-  height: 100%;
+
   color: $primary;
+  height: 100%;
 
   .content {
     @include flexColumnCentered();
-    
-    height: 70%;
+
     gap: 11px;
+    height: 70%;
     text-align: center;
 
     p {
-      width: 260px;
-      line-height: 142.6%;
       font-size: $small;
+      line-height: 142.6%;
+      width: 260px;
     }
   }
 
   .redirection {
     @include flexColumnCentered();
-    height: 30%;
+
     font-size: $x-small;
+    height: 30%;
     text-decoration: underline;
   }
 }

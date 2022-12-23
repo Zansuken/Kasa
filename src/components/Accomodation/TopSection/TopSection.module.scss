@@ -1,7 +1,9 @@
+@import '../../../assets/styles/index.module.scss';
+
 .root {
-    width: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     .title-tags {
         display: flex;
@@ -10,13 +12,13 @@
     }
     
     .review-owner {
+        align-items: center;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         margin-top: 16px;
     }
 
-    @media (min-width: 768px) {
+    @include tabletToDesktop {
         flex-direction: row;
         justify-content: space-between;
 
@@ -25,13 +27,11 @@
         }
 
         .review-owner {
-            @media (min-width: 768px) {
-                flex-direction: column-reverse;
-                align-items: flex-end;
-                justify-content: space-between;
-                gap: 21px;
-                margin-top: 24px;
-            }
+            align-items: flex-end;
+            flex-direction: column-reverse;
+            gap: 21px;
+            justify-content: space-between;
+            margin-top: 24px;
         }
     }
 }

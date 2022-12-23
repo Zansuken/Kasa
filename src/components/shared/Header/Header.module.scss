@@ -2,24 +2,24 @@
 
 .root {
   @include paddingResponsive();
-  height: 47px;
-  width: calc(100% - 40px);
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: white;
-  z-index: 3;
-  position: fixed;
   box-shadow: 0 -5px 5px 4px black;
-  
-  @media (min-width: 768px)  {
+  display: flex;
+  height: 47px;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 3;
+
+  @include tabletToDesktop {
     height: 68px;
-    width: calc(100% - 200px);
     padding-top: 40px;
+    width: calc(100% - 200px);
   }
-  
+
   .logo {
     height: 100%;
     width: fit-content;
@@ -27,11 +27,11 @@
 
   .nav {
     color: $primary;
-    font-size: $xx-small;
     display: flex;
+    font-size: $xx-small;
     gap: 10px;
 
-    @media (min-width: 768px)  {
+    @include tabletToDesktop {
       font-size: $medium;
       gap: 57px;
     }

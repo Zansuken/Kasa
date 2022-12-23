@@ -6,14 +6,14 @@ import Title from './Title/Title';
 import classes from './TopSection.module.scss';
 
 type Props = {
-  title: string;
-  location: string;
-  tags: string[];
   host: { name: string; picture: string };
+  location: string;
   rating: string;
+  tags: string[];
+  title: string;
 };
 
-const TopSection: FC<Props> = ({ title, tags, location, host, rating }) => (
+const TopSection: FC<Props> = ({ host, location, rating, tags, title }) => (
   <section className={classes['root']}>
     <div className={classes['title-tags']}>
       <Title title={title} location={location} />

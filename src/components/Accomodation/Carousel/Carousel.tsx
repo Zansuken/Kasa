@@ -11,8 +11,8 @@ const Carousel: FC<Props> = ({ pictures }) => {
   const totalPics = pictures.length;
 
   const navButtonProps = {
-    onPicChange: setDisplayedPic,
     currentPic: displayedPic,
+    onPicChange: setDisplayedPic,
     totalPics,
   };
 

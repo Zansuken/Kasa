@@ -1,22 +1,21 @@
 @import '../../../../../assets/styles/index.module.scss';
 
 .root {
-  color: white;
+  align-items: center;
   background-color: $primary;
+  border-radius: $border-radius--small;
+  color: white;
+  display: flex;
   font-size: $xxx-small;
   height: 18px;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  width: fit-content;
   padding: 0 6px;
-  border-radius: $border-radius--small;
+  width: fit-content;
 
-  @media (min-width: 768px) {
-    font-size: $x-small;
-    padding: 0 16px;
-    height: 25px;
+  @include tabletToDesktop {
     border-radius: $border-radius--medium;
-    
+    font-size: $x-small;
+    height: 25px;
+    padding: 0 16px;
   }
 }

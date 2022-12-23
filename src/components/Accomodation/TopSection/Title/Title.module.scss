@@ -1,12 +1,12 @@
 @import '../../../../assets/styles/index.module.scss';
 
 .root {
-  width: 100%;
   color: $primary;
-  margin-top: 15px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  margin-top: 15px;
+  width: 100%;
   
   h1 {
     font-size: $small;
@@ -18,7 +18,7 @@
     line-height: 19.96px;
   }
 
-  @media (min-width: 768px) {
+  @include tabletToDesktop {
     margin-top: 30px;
     
     h1 {

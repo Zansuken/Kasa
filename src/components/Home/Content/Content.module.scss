@@ -4,28 +4,28 @@
   @include pageDefaultSetup();
   @include flexColumn();
 
-  width: 100%;
   gap: 20px;
+  width: 100%;
 
   .accomodationsList {
     height: fit-content;
   }
 
-  @media (min-width: 768px) {
+  @include tabletToDesktop {
     background-color: $light-grey;
+    border-radius: $border-radius--large;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(340px, 1fr));
     grid-column-gap: 50px;
     grid-row-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(340px, 1fr));
     justify-content: center;
     justify-items: center;
-    border-radius: $border-radius--large;
     margin-top: 43px;
-    padding-top: 56px;
-    padding-right: 50px;
-    padding-left: 50px;
     padding-bottom: 56px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 56px;
   }
 }

@@ -3,16 +3,16 @@ import { ReactComponent as ArrowIcon } from '../../../../assets/images/arrow.svg
 import classes from './NavButton.module.scss';
 
 type Props = {
+  currentPic: number;
   direction: string;
   onPicChange: (currentPic: number) => void;
-  currentPic: number;
   totalPics: number;
 };
 
 const NavButton: FC<Props> = ({
+  currentPic,
   direction,
   onPicChange,
-  currentPic,
   totalPics,
 }) => {
   const handlePicChange = () => {

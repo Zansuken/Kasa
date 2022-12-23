@@ -1,58 +1,58 @@
 @import '../../../../assets/styles/index.module.scss';
 
 .root {
-  width: 100%;
-  min-height: 255px;
-  border-radius: $border-radius--medium;
   background-color: $primary;
+  border-radius: $border-radius--medium;
   font-size: $small;
-  position: relative;
+  min-height: 255px;
   overflow: hidden;
+  position: relative;
+  width: 100%;
   
   .cover {
     height: 100%;
-    width: 100%;
-    position: absolute;
     object-fit: cover;
     object-position: center;
+    position: absolute;
     transition: height 0.3s ease-in-out;
+    width: 100%;
   }
 
   .link {
     height: 100%;
-    width: 100%;
-    position: absolute;
     opacity: 0;
+    position: absolute;
+    width: 100%;
   }
 
   &::before {
-    content: '';
-    width: 100%;
-    height: 100%;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-    position: absolute;
-    z-index: 2;
+    content: '';
+    height: 100%;
     pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
   }
   
   .mask {
-    width: 100%;
     height: 100%;
     pointer-events: none;
+    width: 100%;
 
     .title {
-      z-index: 2;
-      position: absolute;
       bottom: 15px;
-      left: 20px;
-      padding-right: 10px;
       color: white;
-      pointer-events: none;
+      left: 20px;
       line-height: 25.67px;
+      padding-right: 10px;
+      pointer-events: none;
+      position: absolute;
+      z-index: 2;
     }
   }
 
-  @media (min-width: 768px) {
+  @include tabletToDesktop {
     max-width: 340px;
     min-height: 340px;
 

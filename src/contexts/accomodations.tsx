@@ -1,9 +1,9 @@
 import {
   createContext,
   FC,
+  PropsWithChildren,
   useEffect,
   useState,
-  PropsWithChildren,
 } from 'react';
 import {
   AccomodationInterface,

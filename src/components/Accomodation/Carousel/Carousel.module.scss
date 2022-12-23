@@ -1,41 +1,41 @@
 @import '../../../assets/styles/index.module.scss';
 
 .root {
-  width: 100%;
-  height: 225px;
+  align-items: center;
   border-radius: $border-radius--medium;
+  display: flex;
+  height: 225px;
   overflow: hidden;
   position: relative;
-  display: flex;
-  align-items: center;
+  width: 100%;
 
-  @media (min-width: 768px) {
-    height: 415px;
+  @include tabletToDesktop {
     border-radius: $border-radius--large;
+    height: 415px;
   }
 
   img {
-    width: 100%;
+    filter: brightness(0.9);
     height: 100%;
     object-fit: cover;
     object-position: center;
     opacity: 0;
-    transition: opacity 0.7s ease-in-out;
     position: absolute;
-    filter: brightness(0.9);
+    transition: opacity 0.7s ease-in-out;
+    width: 100%;
   }
 
   .displayedPic {
-    position: absolute;
     left: 0;
     opacity: 1;
+    position: absolute;
   }
 
   .step {
-    width: 22px;
-    position: absolute;
     bottom: 25px;
-    left: calc(50% - 11px);
     color: white;
+    left: calc(50% - 11px);
+    position: absolute;
+    width: 22px;
   }
 }
