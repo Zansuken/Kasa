@@ -1,6 +1,8 @@
 @import '../../../../assets/styles/index.module.scss';
 
 .root {
+  display: flex;
+  
   svg {
     height: 18px;
     width: 18px;
