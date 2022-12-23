@@ -4,12 +4,13 @@ import {
   AccomodationsType,
 } from '../../../types/accomodations';
 import AccomodationCard from './AccomodationCard/AccomodationCard';
+import { FC } from 'react';
 
 type Props = {
   accomodations: AccomodationsType | null;
 };
 
-const Content = ({ accomodations }: Props) => {
+const Content: FC<Props> = ({ accomodations }) => {
   return (
     <ul className={classes['root']}>
       {accomodations?.map((accomodation: AccomodationInterface, index) => (
