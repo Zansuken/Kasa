@@ -33,6 +33,7 @@ const Carousel: FC<Props> = ({ pictures }) => {
           ))}
           <span
             className={classes['step']}
+            data-testid="step-indicator-test"
           >{`${displayedPic}/${totalPics}`}</span>
           <NavButton direction={'left'} {...navButtonProps} />
         </>

@@ -30,7 +30,5 @@ describe('Render About correctly.', () => {
     aboutData.forEach(({ label }) => {
       expect(screen.getByText(label)).toBeInTheDocument();
     });
-
-    screen.debug();
   });
 });
