@@ -15,9 +15,9 @@ const Rating: FC<Props> = ({ rating }) => {
     <div className={classes['root']}>
       {maxStars.map((_, index) =>
         index + 1 <= Number(rating) ? (
-          <OrangeStar key={index} />
+          <OrangeStar key={index} data-testid="orange-star-test" />
         ) : (
-          <GreyStar key={index} />
+          <GreyStar key={index} data-testid="grey-star-test" />
         )
       )}
     </div>
