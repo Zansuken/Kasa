@@ -12,7 +12,7 @@ const NotFound: FC = () => {
   return (
     <main className={classes['root']}>
       <div className={classes['content']}>
-        <React404Logo />
+        <React404Logo title="404-logo" />
         <p>{"Oups! La page que vous demandez n'existe pas."}</p>
       </div>
       <div className={classes['redirection']}>
