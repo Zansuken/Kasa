@@ -1,15 +1,32 @@
 import { FC, useState } from 'react';
 
-import { ReactComponent as ArrowIcon } from '../../../assets/images/arrow.svg';
+import { ReactComponent as ArrowIcon } from 'assets/images/arrow.svg';
 
 import classes from './CollapsingCard.module.scss';
 
-type Props = {
+type ContentProps = {
+  content: string | string[];
+};
+
+const Content: FC<ContentProps> = ({ content }) => {
+  if (Array.isArray(content)) {
+    return (
+      <ul>
+        {content.map((element, index) => (
+          <li key={index}>{element}</li>
+        ))}
+      </ul>
+    );
+  }
+  return <p>{content}</p>;
+};
+
+type CollapsingCardProps = {
   content: string | string[];
   label: string;
 };
 
-const CollapsingCard: FC<Props> = ({ content, label }) => {
+const CollapsingCard: FC<CollapsingCardProps> = ({ content, label }) => {
   const [isDeployed, setIsDeployed] = useState<boolean>(false);
 
   const handleIsDeployedToggle = () => setIsDeployed((current) => !current);
@@ -22,19 +39,6 @@ const CollapsingCard: FC<Props> = ({ content, label }) => {
     }
   };
 
-  const Content: FC = () => {
-    if (Array.isArray(content)) {
-      return (
-        <ul>
-          {content.map((element, index) => (
-            <li key={index}>{element}</li>
-          ))}
-        </ul>
-      );
-    }
-    return <p>{content}</p>;
-  };
-
   return (
     <div className={classes['root']}>
       <label className={classNameBuilder('dropDownAction')}>
@@ -42,7 +46,7 @@ const CollapsingCard: FC<Props> = ({ content, label }) => {
         <button
           className={classNameBuilder()}
           onClick={handleIsDeployedToggle}
-          title={`Deploie les détails de: ${label}`}
+          title={`Déploie les détails de: ${label}`}
           data-testid="deploying-card"
         >
           <ArrowIcon />
@@ -52,7 +56,7 @@ const CollapsingCard: FC<Props> = ({ content, label }) => {
         className={classNameBuilder('content')}
         data-testid="deploying-card-content"
       >
-        <Content />
+        <Content content={content} />
       </div>
     </div>
   );

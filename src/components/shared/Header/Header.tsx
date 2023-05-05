@@ -1,6 +1,6 @@
 import classes from './Header.module.scss';
 import { FC } from 'react';
-import { ReactComponent as ReactLogo } from '../../../assets/images/LOGO.svg';
+import { ReactComponent as ReactLogo } from 'assets/images/LOGO.svg';
 import { NavLink } from 'react-router-dom';
 
 const Header: FC = () => {

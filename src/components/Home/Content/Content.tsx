@@ -3,7 +3,7 @@ import { FC } from 'react';
 import {
   AccommodationInterface,
   AccommodationsType,
-} from '../../../types/accommodations';
+} from 'types/accommodations';
 import AccommodationCard from './AccommodationCard/AccommodationCard';
 
 type Props = {

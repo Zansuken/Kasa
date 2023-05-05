@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { AccommodationInterface } from '../../../../types/accommodations';
+import { AccommodationInterface } from 'types/accommodations';
 import classes from './AccommodationCard.module.scss';
 import { FC } from 'react';
 

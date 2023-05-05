@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ReactComponent as React404Logo } from '../../assets/images/404.svg';
-import { changeTabTitle } from '../../services/utils/generals';
+import { ReactComponent as React404Logo } from 'assets/images/404.svg';
+import { changeTabTitle } from 'services/utils/generals';
 import classes from './NotFound.module.scss';
 
 const NotFound: FC = () => {

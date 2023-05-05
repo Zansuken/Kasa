@@ -1,10 +1,10 @@
 import { FC, useEffect } from 'react';
-import aboutData from '../../data/about.json';
-import coverImg from '../../assets/images/about-cover.png';
+import aboutData from 'data/about.json';
+import coverImg from 'assets/images/about-cover.png';
 
 import classes from './About.module.scss';
-import CollapsingCard from '../../components/shared/CollapsingCard/CollapsingCard';
-import { changeTabTitle } from '../../services/utils/generals';
+import CollapsingCard from 'components/shared/CollapsingCard/CollapsingCard';
+import { changeTabTitle } from 'services/utils/generals';
 
 const About: FC = () => {
   useEffect(() => {

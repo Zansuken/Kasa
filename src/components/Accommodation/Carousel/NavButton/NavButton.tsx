@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { ReactComponent as ArrowIcon } from '../../../../assets/images/arrow.svg';
+import { ReactComponent as ArrowIcon } from 'assets/images/arrow.svg';
 import classes from './NavButton.module.scss';
 
 type Props = {
   currentPic: number;
-  direction: string;
+  direction: 'left' | 'right';
   onPicChange: (currentPic: number) => void;
   totalPics: number;
 };

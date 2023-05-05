@@ -6,11 +6,11 @@ import {
   useState,
 } from 'react';
 
-import accommodationsData from '../data/accommodations.json';
+import accommodationsData from 'data/accommodations.json';
 import {
   AccommodationInterface,
   AccommodationsType,
-} from '../types/accommodations';
+} from 'types/accommodations';
 
 export const accommodationsCtx = createContext<AccommodationsType | null>(null);
 

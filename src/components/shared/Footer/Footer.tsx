@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ReactComponent as ReactLogo } from '../../../assets/images/LOGO_WHITE.svg';
+import { ReactComponent as ReactLogo } from 'assets/images/LOGO_WHITE.svg';
 import classes from './Footer.module.scss';
 
 const Footer: FC = () => {

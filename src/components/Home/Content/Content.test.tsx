@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import Content from './Content';
-import accommodations from '../../../data/accommodations.json';
-import { CustomRouter } from '../../../App';
+import accommodations from 'data/accommodations.json';
+import { CustomRouter } from 'App';
 
 it('Render Content correctly.', () => {
   render(

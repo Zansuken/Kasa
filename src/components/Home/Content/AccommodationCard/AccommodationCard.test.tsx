@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { CustomRouter } from '../../../../App';
+import { CustomRouter } from 'App';
 import AccommodationCard from './AccommodationCard';
 
 describe('Render AccommodationCard correctly.', () => {

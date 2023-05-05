@@ -1,8 +1,8 @@
 import { FC, useContext, useEffect } from 'react';
-import Content from '../../components/Home/Content/Content';
-import Title from '../../components/Home/Title/Title';
-import { accommodationsCtx } from '../../contexts/accommodations';
-import { changeTabTitle } from '../../services/utils/generals';
+import Content from 'components/Home/Content/Content';
+import Title from 'components/Home/Title/Title';
+import { accommodationsCtx } from 'contexts/accommodations';
+import { changeTabTitle } from 'services/utils/generals';
 import classes from './Home.module.scss';
 
 const Home: FC = () => {

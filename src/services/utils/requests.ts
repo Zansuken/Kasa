@@ -1,4 +1,4 @@
-import accommodationsData from '../../data/accommodations.json';
+import accommodationsData from 'data/accommodations.json';
 
 export const getSelectedAccommodation = (selectedId: string) => {
   const selectedAccommodation = accommodationsData.filter(

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { CustomRouter } from '../../App';
+import { CustomRouter } from 'App';
 import About from './About';
-import aboutData from '../../data/about.json';
+import aboutData from 'data/about.json';
 
 describe('Render About correctly.', () => {
   const renderAbout = () =>
