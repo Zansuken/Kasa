@@ -1,16 +1,16 @@
 import { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSelectedAccomodation } from '../../services/utils/requests';
-import { AccomodationInterface } from '../../types/accomodations';
-import classes from './Accomodation.module.scss';
-import Carousel from '../../components/Accomodation/Carousel/Carousel';
-import TopSection from '../../components/Accomodation/TopSection/TopSection';
-import AccomodationDetails from '../../components/Accomodation/AccomodationDetails/AccomodationDetails';
+import classes from './Accommodation.module.scss';
+import Carousel from '../../components/Accommodation/Carousel/Carousel';
+import TopSection from '../../components/Accommodation/TopSection/TopSection';
+import AccommodationDetails from '../../components/Accommodation/AccomodationDetails/AccomodationDetails';
 import { changeTabTitle } from '../../services/utils/generals';
+import { AccommodationInterface } from '../../types/accommodations';
 
-const Accomodation: FC = () => {
+const Accommodation: FC = () => {
   const { logementId } = useParams();
-  const accomodation: AccomodationInterface = getSelectedAccomodation(
+  const accommodation: AccommodationInterface = getSelectedAccomodation(
     logementId || ''
   );
   const {
@@ -22,7 +22,7 @@ const Accomodation: FC = () => {
     rating,
     tags,
     title,
-  } = accomodation;
+  } = accommodation;
 
   useEffect(() => {
     changeTabTitle(`Kasa | ${title}`);
@@ -38,9 +38,9 @@ const Accomodation: FC = () => {
         host={host}
         rating={rating}
       />
-      <AccomodationDetails description={description} equipments={equipments} />
+      <AccommodationDetails description={description} equipments={equipments} />
     </main>
   );
 };
 
-export default Accomodation;
+export default Accommodation;

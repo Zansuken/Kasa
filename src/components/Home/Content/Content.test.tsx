@@ -1,12 +1,12 @@
 import { render, screen, within } from '@testing-library/react';
 import Content from './Content';
-import accomodations from '../../../data/accomodations.json';
+import accommodations from '../../../data/accommodations.json';
 import { CustomRouter } from '../../../App';
 
 it('Render Content correctly.', () => {
   render(
     <CustomRouter>
-      <Content accomodations={accomodations} />
+      <Content accommodations={accommodations} />
     </CustomRouter>
   );
 
@@ -14,9 +14,9 @@ it('Render Content correctly.', () => {
   const { getAllByRole } = within(list);
   const items = getAllByRole('listitem');
 
-  expect(items.length).toBe(accomodations.length);
+  expect(items.length).toBe(accommodations.length);
 
-  accomodations.forEach(({ title }) => {
+  accommodations.forEach(({ title }) => {
     expect(screen.getByText(title)).toBeInTheDocument();
   });
 });

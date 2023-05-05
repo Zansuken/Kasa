@@ -1,12 +1,12 @@
 import { FC, useContext, useEffect } from 'react';
 import Content from '../../components/Home/Content/Content';
 import Title from '../../components/Home/Title/Title';
-import { accomodationsCtxt } from '../../contexts/accomodations';
+import { accommodationsCtx } from '../../contexts/accommodations';
 import { changeTabTitle } from '../../services/utils/generals';
 import classes from './Home.module.scss';
 
 const Home: FC = () => {
-  const accomodations = useContext(accomodationsCtxt);
+  const accommodations = useContext(accommodationsCtx);
 
   useEffect(() => {
     changeTabTitle('Kasa | Accueil');
@@ -15,7 +15,7 @@ const Home: FC = () => {
   return (
     <main className={classes['root']}>
       <Title />
-      <Content accomodations={accomodations} />
+      <Content accommodations={accommodations} />
     </main>
   );
 };

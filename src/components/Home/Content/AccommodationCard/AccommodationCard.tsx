@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { AccomodationInterface } from '../../../../types/accomodations';
-import classes from './AccomodationCard.module.scss';
+import { AccommodationInterface } from '../../../../types/accommodations';
+import classes from './AccommodationCard.module.scss';
 
 type Props = {
-  accomodation: AccomodationInterface;
+  accommodation: AccommodationInterface;
 };
 
-const AccomodationCard = ({ accomodation: { id, title, cover } }: Props) => {
+const AccommodationCard = ({ accommodation: { id, title, cover } }: Props) => {
   return (
     <li className={classes['root']}>
       <article>
@@ -14,13 +14,13 @@ const AccomodationCard = ({ accomodation: { id, title, cover } }: Props) => {
           className={classes['cover']}
           src={cover}
           alt={`Photographie du logement: ${title}`}
-          data-testid="accomodation-image"
+          data-testid="accommodation-image"
         />
         <NavLink
           to={`/logements/${id}`}
           className={classes['link']}
           title={'Affiche les détails du logement'}
-          data-testid="accomodation-link"
+          data-testid="accommodation-link"
         />
         <div className={classes['mask']}>
           <h2 className={classes['title']}>{title}</h2>
@@ -30,4 +30,4 @@ const AccomodationCard = ({ accomodation: { id, title, cover } }: Props) => {
   );
 };
 
-export default AccomodationCard;
+export default AccommodationCard;

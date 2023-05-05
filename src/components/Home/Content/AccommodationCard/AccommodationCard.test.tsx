@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { CustomRouter } from '../../../../App';
-import AccomodationCard from './AccomodationCard';
+import AccommodationCard from './AccommodationCard';
 
-describe('Render AccomodationCard correctly.', () => {
-  const mockedAccomodation = {
+describe('Render AccommodationCard correctly.', () => {
+  const mockedAccommodation = {
     id: 'cb02d69b',
     title: 'Magnifique appartement Rivoli',
     cover:
@@ -30,19 +30,19 @@ describe('Render AccomodationCard correctly.', () => {
     tags: ['Louvre', 'Marais', 'Rivoli'],
   };
 
-  const { cover, title, id } = mockedAccomodation;
+  const { cover, title, id } = mockedAccommodation;
 
-  const renderAccomodationCard = () =>
+  const renderAccommodationCard = () =>
     render(
       <CustomRouter>
-        <AccomodationCard accomodation={mockedAccomodation} />
+        <AccommodationCard accommodation={mockedAccommodation} />
       </CustomRouter>
     );
 
   it('Render the image.', () => {
-    renderAccomodationCard();
+    renderAccommodationCard();
 
-    const coverImg = screen.getByTestId('accomodation-image');
+    const coverImg = screen.getByTestId('accommodation-image');
     expect(coverImg).toBeInTheDocument();
     expect(coverImg).toHaveAttribute('src', cover);
     expect(coverImg).toHaveAttribute(
@@ -52,16 +52,16 @@ describe('Render AccomodationCard correctly.', () => {
   });
 
   it('Render the link.', () => {
-    renderAccomodationCard();
+    renderAccommodationCard();
 
-    const link = screen.getByTestId('accomodation-link');
+    const link = screen.getByTestId('accommodation-link');
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('title', 'Affiche les détails du logement');
     expect(link).toHaveAttribute('href', `/logements/${id}`);
   });
 
   it('Render the title.', () => {
-    renderAccomodationCard();
+    renderAccommodationCard();
 
     expect(screen.getByText(title)).toBeInTheDocument();
   });
