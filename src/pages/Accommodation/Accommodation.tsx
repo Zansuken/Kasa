@@ -1,16 +1,16 @@
 import { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getSelectedAccomodation } from '../../services/utils/requests';
+import { getSelectedAccommodation } from '../../services/utils/requests';
 import classes from './Accommodation.module.scss';
 import Carousel from '../../components/Accommodation/Carousel/Carousel';
 import TopSection from '../../components/Accommodation/TopSection/TopSection';
-import AccommodationDetails from '../../components/Accommodation/AccomodationDetails/AccomodationDetails';
+import AccommodationDetails from '../../components/Accommodation/AccommodationDetails/AccommodationDetails';
 import { changeTabTitle } from '../../services/utils/generals';
 import { AccommodationInterface } from '../../types/accommodations';
 
 const Accommodation: FC = () => {
   const { logementId } = useParams();
-  const accommodation: AccommodationInterface = getSelectedAccomodation(
+  const accommodation: AccommodationInterface = getSelectedAccommodation(
     logementId || ''
   );
   const {

@@ -1,12 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import NavButton from './NavButton';
+import { ComponentProps } from 'react';
 
-type Props = {
-  currentPic: number;
-  direction: string;
-  onPicChange: (currentPic: number) => void;
-  totalPics: number;
-};
+type Props = ComponentProps<typeof NavButton>;
 
 describe('Render NavButton correctly.', () => {
   const mockedProps = {

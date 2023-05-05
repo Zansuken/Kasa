@@ -1,6 +1,6 @@
 import accommodationsData from '../../data/accommodations.json';
 
-export const getSelectedAccomodation = (selectedId: string) => {
+export const getSelectedAccommodation = (selectedId: string) => {
   const selectedAccommodation = accommodationsData.filter(
     (accommodation) => accommodation.id === selectedId
   );

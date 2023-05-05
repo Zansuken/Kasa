@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import Carousel from './Carousel';
+import { ComponentProps } from 'react';
 
-type Props = {
-  pictures: string[];
-};
+type Props = ComponentProps<typeof Carousel>;
 
 describe('Render Carousel correctly.', () => {
   const mockedProps = {

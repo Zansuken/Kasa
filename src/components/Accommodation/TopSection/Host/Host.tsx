@@ -6,14 +6,14 @@ type Props = {
 };
 
 const Host: FC<Props> = ({ host: { name, picture } }) => {
-  const firstname = name.split(' ')[0];
-  const lastname = name.split(' ')[1];
+  const firstName = name.split(' ')[0];
+  const lastName = name.split(' ')[1];
 
   return (
     <div className={classes['root']}>
       <div className={classes['name']}>
-        <span>{firstname}</span>
-        <span>{lastname}</span>
+        <span>{firstName}</span>
+        <span>{lastName}</span>
       </div>
       <div className={classes['profilePicture']}>
         <img src={picture} alt="profile picture" />

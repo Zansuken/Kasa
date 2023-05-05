@@ -1,13 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import TopSection from './TopSection';
+import { ComponentProps } from 'react';
 
-type Props = {
-  host: { name: string; picture: string };
-  location: string;
-  rating: string;
-  tags: string[];
-  title: string;
-};
+type Props = ComponentProps<typeof TopSection>;
 
 describe('Render TopSection correctly.', () => {
   const mockedProps = {
@@ -18,7 +13,7 @@ describe('Render TopSection correctly.', () => {
     location: 'Amsterdam',
     rating: '3',
     tags: ['Nice', 'Cool', 'Awesome'],
-    title: 'Best accomodation.',
+    title: 'Best accommodation.',
   };
 
   const renderTopSection = (Props: Props) => render(<TopSection {...Props} />);
@@ -42,14 +37,14 @@ describe('Render TopSection correctly.', () => {
     const orangeStars = screen.getAllByTestId('orange-star-test');
     const greyStars = screen.getAllByTestId('grey-star-test');
     const profilePicture = screen.getByAltText('profile picture');
-    const firstname = mockedProps.host.name.split(' ')[0];
-    const lastname = mockedProps.host.name.split(' ')[1];
+    const firstName = mockedProps.host.name.split(' ')[0];
+    const lastName = mockedProps.host.name.split(' ')[1];
 
     expect(orangeStars).toHaveLength(3);
     expect(greyStars).toHaveLength(2);
 
-    expect(screen.getByText(firstname)).toBeInTheDocument();
-    expect(screen.getByText(lastname)).toBeInTheDocument();
+    expect(screen.getByText(firstName)).toBeInTheDocument();
+    expect(screen.getByText(lastName)).toBeInTheDocument();
     expect(profilePicture).toHaveAttribute('src', mockedProps.host.picture);
   });
 });

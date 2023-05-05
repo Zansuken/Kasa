@@ -1,12 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import { AccommodationInterface } from '../../../../types/accommodations';
 import classes from './AccommodationCard.module.scss';
+import { FC } from 'react';
 
 type Props = {
   accommodation: AccommodationInterface;
 };
 
-const AccommodationCard = ({ accommodation: { id, title, cover } }: Props) => {
+const AccommodationCard: FC<Props> = ({
+  accommodation: { id, title, cover },
+}) => {
   return (
     <li className={classes['root']}>
       <article>

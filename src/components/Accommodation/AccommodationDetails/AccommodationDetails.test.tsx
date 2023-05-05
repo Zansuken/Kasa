@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import AccomodationDetails from './AccomodationDetails';
+import AccommodationDetails from './AccommodationDetails';
 
-it('Render AccomodationDetails correctly.', () => {
+it('Render AccommodationDetails correctly.', () => {
   const mockedProps = {
     description: 'Votre maison loin de chez vous...',
     equipments: [
@@ -14,7 +14,7 @@ it('Render AccomodationDetails correctly.', () => {
     ],
   };
 
-  render(<AccomodationDetails {...mockedProps} />);
+  render(<AccommodationDetails {...mockedProps} />);
 
   // Labels
   expect(screen.getByText(/Description/i)).toBeInTheDocument();
