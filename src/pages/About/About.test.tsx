@@ -1,19 +1,35 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { CustomRouter } from 'App';
 import About from './About';
-import aboutData from 'data/about.json';
+import { appCtx } from 'contexts/app';
+import { render } from 'utils/tests';
 
 describe('Render About correctly.', () => {
-  const renderAbout = () =>
+  beforeEach(() => {
     render(
       <CustomRouter>
         <About />
-      </CustomRouter>
+      </CustomRouter>,
+      {
+        value: {
+          about: {
+            content: {
+              sections: [
+                { label: 'label1', content: 'content1' },
+                { label: 'label2', content: 'content2' },
+                { label: 'label3', content: 'content3' },
+                { label: 'label4', content: 'content4' },
+              ],
+            },
+            fetchData: jest.fn(),
+          },
+        },
+        context: appCtx,
+      }
     );
+  });
 
   it('Render the cover', () => {
-    renderAbout();
-
     const cover = screen.getByRole('img');
 
     expect(cover).toBeInTheDocument();
@@ -21,14 +37,8 @@ describe('Render About correctly.', () => {
   });
 
   it('Render the cards list.', () => {
-    renderAbout();
-
     const list = screen.getAllByTestId('deploying-card-content');
 
-    expect(aboutData.length).toBe(list.length);
-
-    aboutData.forEach(({ label }) => {
-      expect(screen.getByText(label)).toBeInTheDocument();
-    });
+    expect(list.length).toBe(4);
   });
 });

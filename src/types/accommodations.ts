@@ -1,4 +1,4 @@
-export interface AccommodationInterface {
+export type Accommodation = {
   id: string;
   title: string;
   cover: string;
@@ -12,6 +12,4 @@ export interface AccommodationInterface {
   location: string;
   equipments: string[];
   tags: string[];
-}
-
-export type AccommodationsType = AccommodationInterface[];
+};

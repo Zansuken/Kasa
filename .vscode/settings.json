@@ -3,5 +3,6 @@
     "cSpell.words": [
         "esnext",
         "testid"
-    ]
+    ],
+    "editor.formatOnSave": true
 }

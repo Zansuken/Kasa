@@ -1,31 +1,49 @@
-import {
-  createContext,
-  FC,
-  PropsWithChildren,
-  useEffect,
-  useState,
-} from 'react';
+import { createContext, FC, PropsWithChildren, useState } from 'react';
 
-import accommodationsData from 'data/accommodations.json';
-import {
-  AccommodationInterface,
-  AccommodationsType,
-} from 'types/accommodations';
+import { Accommodation } from 'types/accommodations';
+import { fetchAccommodations } from 'api/requests';
 
-export const accommodationsCtx = createContext<AccommodationsType | null>(null);
+export type AccommodationsCtxType = {
+  accommodations: Accommodation[];
+  fetchData: () => Promise<void>;
+  loading?: boolean;
+};
 
-const AccommodationsCtx: FC<PropsWithChildren> = ({ children }) => {
-  const [data, setData] = useState<AccommodationInterface[]>([]);
+const accommodationsCtxDefaultValue: AccommodationsCtxType = {
+  accommodations: [],
+  fetchData: () => Promise.resolve(),
+};
 
-  useEffect(() => {
-    setData(accommodationsData);
-  }, []);
+export const accommodationsCtx = createContext<AccommodationsCtxType>(
+  accommodationsCtxDefaultValue
+);
+
+const AccommodationsProvider: FC<PropsWithChildren> = ({ children }) => {
+  const [accommodations, setAccommodations] = useState<Accommodation[]>([]);
+  const [loading, setLoading] = useState<boolean | undefined>(undefined);
+
+  const context = {
+    accommodations,
+    fetchData: async () => {
+      setLoading(true);
+
+      try {
+        const response = await fetchAccommodations();
+        setAccommodations(response);
+      } catch (error) {
+        console.error(error);
+      }
+
+      setLoading(false);
+    },
+    loading,
+  };
 
   return (
-    <accommodationsCtx.Provider value={data}>
+    <accommodationsCtx.Provider value={context}>
       {children}
     </accommodationsCtx.Provider>
   );
 };
 
-export default AccommodationsCtx;
+export default AccommodationsProvider;

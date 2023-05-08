@@ -5,6 +5,7 @@
   @include paddingResponsive();
   @include pageDefaultSetup();
 
+  flex: 1;
   height: 100%;
   margin-top: 87px;
   padding-bottom: 16px;

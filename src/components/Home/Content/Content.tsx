@@ -1,19 +1,16 @@
 import classes from './Content.module.scss';
 import { FC } from 'react';
-import {
-  AccommodationInterface,
-  AccommodationsType,
-} from 'types/accommodations';
+import { Accommodation } from 'types/accommodations';
 import AccommodationCard from './AccommodationCard/AccommodationCard';
 
 type Props = {
-  accommodations: AccommodationsType | null;
+  accommodations: Accommodation[] | null;
 };
 
-const Content: FC<Props> = ({ accommodations: accommodations }) => {
+const Content: FC<Props> = ({ accommodations }) => {
   return (
     <ul className={classes['root']}>
-      {accommodations?.map((accommodation: AccommodationInterface, index) => (
+      {accommodations?.map((accommodation: Accommodation, index) => (
         <AccommodationCard key={index} accommodation={accommodation} />
       ))}
     </ul>

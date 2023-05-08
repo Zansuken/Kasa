@@ -1,44 +1,49 @@
-import { FC, useEffect } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getSelectedAccommodation } from 'services/utils/requests';
 import classes from './Accommodation.module.scss';
 import Carousel from 'components/Accommodation/Carousel/Carousel';
 import TopSection from 'components/Accommodation/TopSection/TopSection';
 import AccommodationDetails from 'components/Accommodation/AccommodationDetails/AccommodationDetails';
-import { changeTabTitle } from 'services/utils/generals';
-import { AccommodationInterface } from 'types/accommodations';
+import { changeTabTitle } from 'utils/generals';
+import { Accommodation as AccommodationType } from 'types/accommodations';
+import { accommodationsCtx } from 'contexts/accommodations';
 
 const Accommodation: FC = () => {
   const { logementId } = useParams();
-  const accommodation: AccommodationInterface = getSelectedAccommodation(
-    logementId || ''
-  );
-  const {
-    description,
-    equipments,
-    host,
-    location,
-    pictures,
-    rating,
-    tags,
-    title,
-  } = accommodation;
+  const { accommodations, fetchData } = useContext(accommodationsCtx);
+  const [accommodation, setAccommodation] = useState<AccommodationType>();
 
   useEffect(() => {
-    changeTabTitle(`Kasa | ${title}`);
-  }, []);
+    if (accommodations.length === 0) {
+      fetchData();
+    } else {
+      changeTabTitle(`Kasa | ${accommodations[0].title}`);
+      setAccommodation(
+        accommodations.find((accommodation) => accommodation.id === logementId)
+      );
+    }
+  }, [accommodations]);
 
   return (
     <main className={classes['root']}>
-      <Carousel pictures={pictures} />
-      <TopSection
-        title={title}
-        location={location}
-        tags={tags}
-        host={host}
-        rating={rating}
-      />
-      <AccommodationDetails description={description} equipments={equipments} />
+      {accommodation ? (
+        <>
+          <Carousel pictures={accommodation.pictures} />
+          <TopSection
+            title={accommodation.title}
+            location={accommodation.location}
+            tags={accommodation.tags}
+            host={accommodation.host}
+            rating={accommodation.rating}
+          />
+          <AccommodationDetails
+            description={accommodation.description}
+            equipments={accommodation.equipments}
+          />
+        </>
+      ) : (
+        <p>Chargement...</p>
+      )}
     </main>
   );
 };
