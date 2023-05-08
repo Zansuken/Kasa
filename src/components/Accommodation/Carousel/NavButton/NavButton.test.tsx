@@ -15,7 +15,7 @@ describe('Render NavButton correctly.', () => {
   const renderNavButton = (Props: Props) => render(<NavButton {...Props} />);
 
   it('Render the button.', () => {
-    renderNavButton(mockedProps);
+    renderNavButton({ ...mockedProps, direction: 'right' });
 
     const button = screen.getByRole('button');
 
@@ -23,7 +23,7 @@ describe('Render NavButton correctly.', () => {
   });
 
   it('Render the button with the good className (right).', () => {
-    renderNavButton(mockedProps);
+    renderNavButton({ ...mockedProps, direction: 'right' });
 
     const button = screen.getByRole('button');
 

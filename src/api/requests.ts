@@ -4,7 +4,7 @@ import { AboutSection } from 'contexts/app';
 
 const BASE_URL =
   process.env.NODE_ENV === 'production'
-    ? 'https://api.example.com'
+    ? process.env.REACT_APP_API_URL
     : 'http://localhost:3000';
 
 /**
