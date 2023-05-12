@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound/NotFound';
 import AccommodationsProvider from './contexts/accommodations';
 import Accommodation from './pages/Accommodation/Accommodation';
 import AppProvider from 'contexts/app';
+import classes from './App.module.scss';
 
 export const CustomRouter: FC<PropsWithChildren> = ({ children }) => (
   <BrowserRouter>{children}</BrowserRouter>
@@ -17,18 +18,20 @@ const App = () => (
   <AppProvider>
     <AccommodationsProvider>
       <CustomRouter>
-        <Header />
-        <Routes>
-          <Route path="/Kasa/" element={<Home />}></Route>
-          <Route path="/" element={<Home />}></Route>
-          <Route
-            path="/Kasa/logements/:logementId"
-            element={<Accommodation />}
-          ></Route>
-          <Route path="/Kasa/a-propos" element={<About />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-        </Routes>
-        <Footer />
+        <div className={classes['root']}>
+          <Header />
+          <Routes>
+            <Route path="/Kasa/" element={<Home />}></Route>
+            <Route path="/" element={<Home />}></Route>
+            <Route
+              path="/Kasa/logements/:logementId"
+              element={<Accommodation />}
+            ></Route>
+            <Route path="/Kasa/a-propos" element={<About />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+          <Footer />
+        </div>
       </CustomRouter>
     </AccommodationsProvider>
   </AppProvider>

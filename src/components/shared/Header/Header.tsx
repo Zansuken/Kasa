@@ -19,7 +19,7 @@ const Header: FC = () => {
           ACCUEIL
         </NavLink>
         <NavLink
-          to="a-propos"
+          to="/Kasa/a-propos"
           style={({ isActive }) => (isActive ? { ...activeStyle } : {})}
         >
           A PROPOS

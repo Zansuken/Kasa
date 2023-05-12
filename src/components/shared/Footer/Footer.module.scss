@@ -2,7 +2,6 @@
 
 .root {
   align-items: center;
-  bottom: 0;
   display: flex;
   flex-direction: row;
   height: fit-content;
@@ -22,10 +21,10 @@
     height: 39.44px;
   }
 
-  background-color: black !important;
+  background-color: black;
   .copyrights {
     align-items: center;
-    background-color: black !important;
+    background-color: black;
     color: white;
     display: flex;
     font-size: $xx-small;

@@ -19,7 +19,7 @@ const AccommodationCard: FC<Props> = ({
         data-testid="accommodation-image"
       />
       <NavLink
-        to={`/logements/${id}`}
+        to={`/Kasa/logements/${id}`}
         className={classes['link']}
         title={'Affiche les détails du logement'}
         data-testid="accommodation-link"

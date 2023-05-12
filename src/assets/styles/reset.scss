@@ -34,7 +34,6 @@ html {
 body {
 	height: 100%;
 	line-height: 1;
-  background-color: black;
 }
 ol, ul {
 	list-style: none;
@@ -68,8 +67,4 @@ a {
 	font-weight: 500;
 	height: 100%;
 	justify-content: space-between;
-
-	&:first-of-type div {
-		background-color: white;
-	}
 }
