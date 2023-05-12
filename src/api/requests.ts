@@ -3,9 +3,9 @@ import { Endpoints } from './endpoints';
 import { AboutSection } from 'contexts/app';
 
 const BASE_URL =
-  process.env.NODE_ENV === 'production' ? 'static' : 'http://localhost:3000';
-
-console.log(process.env);
+  process.env.NODE_ENV === 'production'
+    ? process.env.PUBLIC_URL
+    : 'http://localhost:3000';
 
 /**
  * GET request
