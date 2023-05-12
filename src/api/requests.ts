@@ -3,9 +3,7 @@ import { Endpoints } from './endpoints';
 import { AboutSection } from 'contexts/app';
 
 const BASE_URL =
-  process.env.NODE_ENV === 'production'
-    ? process.env.REACT_APP_API_URL
-    : 'http://localhost:3000';
+  process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000';
 
 /**
  * GET request
