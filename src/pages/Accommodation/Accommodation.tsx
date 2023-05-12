@@ -1,5 +1,5 @@
 import { FC, useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import classes from './Accommodation.module.scss';
 import Carousel from 'components/Accommodation/Carousel/Carousel';
 import TopSection from 'components/Accommodation/TopSection/TopSection';
@@ -11,16 +11,28 @@ import { accommodationsCtx } from 'contexts/accommodations';
 const Accommodation: FC = () => {
   const { logementId } = useParams();
   const { accommodations, fetchData } = useContext(accommodationsCtx);
-  const [accommodation, setAccommodation] = useState<AccommodationType>();
+  const [accommodation, setAccommodation] = useState<
+    AccommodationType | null | undefined
+  >();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (accommodations?.length === 0) {
       fetchData();
     } else {
       changeTabTitle(`Kasa | ${accommodations[0]?.title}`);
-      setAccommodation(
-        accommodations?.find((accommodation) => accommodation.id === logementId)
-      );
+
+      const accommodation =
+        accommodations?.find(
+          (accommodation) => accommodation.id === logementId
+        ) ?? null;
+
+      if (accommodation === null) {
+        navigate('/Kasa/404');
+      }
+
+      setAccommodation(accommodation);
     }
   }, [accommodations]);
 
