@@ -25,6 +25,7 @@ const mockData: AccommodationType[] = [
 const mockContextValue = {
   accommodations: mockData,
   fetchData: jest.fn(),
+  loading: false,
 };
 
 describe('Accommodation component', () => {
@@ -38,7 +39,7 @@ describe('Accommodation component', () => {
         <Accommodation />
       </CustomRouter>,
       {
-        value: { ...mockContextValue, accommodations: [] },
+        value: { ...mockContextValue, accommodations: [], loading: true },
         context: accommodationsCtx,
       }
     );

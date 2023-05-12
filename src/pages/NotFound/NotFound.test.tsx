@@ -30,6 +30,6 @@ describe('Render NotFound correctly.', () => {
     });
 
     expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute('href', '/');
+    expect(link).toHaveAttribute('href', '/Kasa');
   });
 });

@@ -7,10 +7,12 @@ import AccommodationDetails from 'components/Accommodation/AccommodationDetails/
 import { changeTabTitle } from 'utils/generals';
 import { Accommodation as AccommodationType } from 'types/accommodations';
 import { accommodationsCtx } from 'contexts/accommodations';
+import { ROUTES } from 'constants/routes';
+import Loading from 'components/shared/Loading/Loading';
 
 const Accommodation: FC = () => {
   const { logementId } = useParams();
-  const { accommodations, fetchData } = useContext(accommodationsCtx);
+  const { accommodations, fetchData, loading } = useContext(accommodationsCtx);
   const [accommodation, setAccommodation] = useState<
     AccommodationType | null | undefined
   >();
@@ -29,7 +31,7 @@ const Accommodation: FC = () => {
         ) ?? null;
 
       if (accommodation === null) {
-        navigate('/Kasa/404');
+        navigate(ROUTES.NOT_FOUND);
       }
 
       setAccommodation(accommodation);
@@ -38,7 +40,7 @@ const Accommodation: FC = () => {
 
   return (
     <main className={classes['root']}>
-      {accommodation ? (
+      {accommodation && !loading && (
         <>
           <Carousel pictures={accommodation.pictures} />
           <TopSection
@@ -53,9 +55,8 @@ const Accommodation: FC = () => {
             equipments={accommodation.equipments}
           />
         </>
-      ) : (
-        <p>Chargement...</p>
       )}
+      {loading && <Loading />}
     </main>
   );
 };

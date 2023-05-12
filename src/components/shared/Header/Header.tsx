@@ -2,6 +2,7 @@ import classes from './Header.module.scss';
 import { FC } from 'react';
 import { ReactComponent as ReactLogo } from 'assets/images/LOGO.svg';
 import { NavLink } from 'react-router-dom';
+import { ROUTES } from 'constants/routes';
 
 const Header: FC = () => {
   const activeStyle = {
@@ -13,13 +14,13 @@ const Header: FC = () => {
       <ReactLogo data-testid="header-logo" className={classes['logo']} />
       <nav className={classes['nav']}>
         <NavLink
-          to="/"
+          to={ROUTES.HOME}
           style={({ isActive }) => (isActive ? { ...activeStyle } : {})}
         >
           ACCUEIL
         </NavLink>
         <NavLink
-          to="/Kasa/a-propos"
+          to={ROUTES.ABOUT}
           style={({ isActive }) => (isActive ? { ...activeStyle } : {})}
         >
           A PROPOS

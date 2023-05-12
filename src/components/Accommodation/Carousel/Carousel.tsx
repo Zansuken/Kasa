@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Carousel: FC<Props> = ({ pictures }) => {
-  const [displayedPic, setDisplayedPic] = useState(1);
+  const [displayedPic, setDisplayedPic] = useState<number>(1);
   const totalPics = pictures.length;
 
   const navButtonProps = {
