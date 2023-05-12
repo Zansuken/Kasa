@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.5df5101d.css",
-    "main.js": "/static/js/main.91bce97c.js",
-    "static/media/about-cover.png": "/static/media/about-cover.a76f9cf2da0c2e983845.png",
-    "static/media/IMG.png": "/static/media/IMG.912a2785d9054e272f03.png",
-    "static/media/LOGO.svg": "/static/media/LOGO.bb1c78bdbf97911cf6044e13e0c4f670.svg",
-    "static/media/LOGO_WHITE.svg": "/static/media/LOGO_WHITE.ee689fd9409d1b5a898b4247819d8a00.svg",
-    "static/media/404.svg": "/static/media/404.52fbf86433be6c4f5f1e77e19f00eb68.svg",
-    "index.html": "/index.html",
-    "static/media/grey-star.svg": "/static/media/grey-star.ae969662d77c07fdced4114f41bf3e69.svg",
-    "static/media/orange-star.svg": "/static/media/orange-star.4949d967956f67c591576c1c58b597ba.svg",
-    "static/media/arrow.svg": "/static/media/arrow.41be4027b2aab1603391d468d8a4d6e9.svg",
-    "main.5df5101d.css.map": "/static/css/main.5df5101d.css.map",
-    "main.91bce97c.js.map": "/static/js/main.91bce97c.js.map"
+    "main.css": "/Kasa/static/css/main.7fae55ed.css",
+    "main.js": "/Kasa/static/js/main.017c1c3f.js",
+    "static/media/about-cover.png": "/Kasa/static/media/about-cover.a76f9cf2da0c2e983845.png",
+    "static/media/IMG.png": "/Kasa/static/media/IMG.912a2785d9054e272f03.png",
+    "static/media/LOGO.svg": "/Kasa/static/media/LOGO.bb1c78bdbf97911cf6044e13e0c4f670.svg",
+    "static/media/LOGO_WHITE.svg": "/Kasa/static/media/LOGO_WHITE.ee689fd9409d1b5a898b4247819d8a00.svg",
+    "static/media/404.svg": "/Kasa/static/media/404.52fbf86433be6c4f5f1e77e19f00eb68.svg",
+    "index.html": "/Kasa/index.html",
+    "static/media/grey-star.svg": "/Kasa/static/media/grey-star.ae969662d77c07fdced4114f41bf3e69.svg",
+    "static/media/orange-star.svg": "/Kasa/static/media/orange-star.4949d967956f67c591576c1c58b597ba.svg",
+    "static/media/arrow.svg": "/Kasa/static/media/arrow.41be4027b2aab1603391d468d8a4d6e9.svg",
+    "main.7fae55ed.css.map": "/Kasa/static/css/main.7fae55ed.css.map",
+    "main.017c1c3f.js.map": "/Kasa/static/js/main.017c1c3f.js.map"
   },
   "entrypoints": [
-    "static/css/main.5df5101d.css",
-    "static/js/main.91bce97c.js"
+    "static/css/main.7fae55ed.css",
+    "static/js/main.017c1c3f.js"
   ]
 }
