@@ -5,6 +5,8 @@ import { accommodationsCtx } from 'contexts/accommodations';
 import { CustomRouter } from 'App';
 import { render } from 'utils/tests';
 
+const { getByText } = screen;
+
 const mockData: AccommodationType[] = [
   {
     id: '1',
@@ -30,33 +32,27 @@ describe('Accommodation component', () => {
     jest.clearAllMocks();
   });
 
-  test('renders loading message when accommodations is empty', () => {
+  it('renders loading message when accommodations is empty', () => {
     render(
       <CustomRouter>
-        <accommodationsCtx.Provider
-          value={{ ...mockContextValue, accommodations: [] }}
-        >
-          <Accommodation />
-        </accommodationsCtx.Provider>
+        <Accommodation />
       </CustomRouter>,
       {
-        value: { accommodations: [], fetchData: jest.fn() },
+        value: { ...mockContextValue, accommodations: [] },
         context: accommodationsCtx,
       }
     );
 
-    expect(screen.getByText('Chargement...')).toBeInTheDocument();
+    expect(getByText('Chargement...')).toBeInTheDocument();
     expect(mockContextValue.fetchData).toHaveBeenCalledTimes(1);
   });
 
-  test('renders accommodation details when accommodations is not empty', async () => {
+  it('renders accommodation details when accommodations is not empty', async () => {
     const mockAccommodation = mockData[0];
 
     render(
       <CustomRouter>
-        <accommodationsCtx.Provider value={mockContextValue}>
-          <Accommodation />
-        </accommodationsCtx.Provider>
+        <Accommodation />
       </CustomRouter>,
       {
         value: mockContextValue,
@@ -67,17 +63,13 @@ describe('Accommodation component', () => {
     await mockContextValue.fetchData();
 
     waitFor(() => {
-      expect(screen.getByText(mockAccommodation.title)).toBeInTheDocument();
-      expect(screen.getByText(mockAccommodation.location)).toBeInTheDocument();
-      expect(screen.getByText(mockAccommodation.tags[0])).toBeInTheDocument();
-      expect(screen.getByText(mockAccommodation.host.name)).toBeInTheDocument();
-      expect(screen.getByText(mockAccommodation.rating)).toBeInTheDocument();
-      expect(
-        screen.getByText(mockAccommodation.description)
-      ).toBeInTheDocument();
-      expect(
-        screen.getByText(mockAccommodation.equipments[0])
-      ).toBeInTheDocument();
+      expect(getByText(mockAccommodation.title)).toBeInTheDocument();
+      expect(getByText(mockAccommodation.location)).toBeInTheDocument();
+      expect(getByText(mockAccommodation.tags[0])).toBeInTheDocument();
+      expect(getByText(mockAccommodation.host.name)).toBeInTheDocument();
+      expect(getByText(mockAccommodation.rating)).toBeInTheDocument();
+      expect(getByText(mockAccommodation.description)).toBeInTheDocument();
+      expect(getByText(mockAccommodation.equipments[0])).toBeInTheDocument();
     });
   });
 });

@@ -1,8 +1,9 @@
 import { render, screen, within } from '@testing-library/react';
 import Tags from './Tags';
+import { ComponentProps } from 'react';
 
 it('Render Tags correctly.', () => {
-  const mockedProps = {
+  const mockedProps: ComponentProps<typeof Tags> = {
     tags: ['Nice', 'Cool', 'Awesome'],
   };
   render(<Tags {...mockedProps} />);

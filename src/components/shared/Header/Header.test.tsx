@@ -2,25 +2,25 @@ import { render, screen } from '@testing-library/react';
 import { CustomRouter } from 'App';
 import Header from './Header';
 
+const { getByTestId, getByText } = screen;
+
 describe('Render Header correctly.', () => {
-  const renderHeader = () =>
+  beforeEach(() =>
     render(
       <CustomRouter>
         <Header />
       </CustomRouter>
-    );
+    )
+  );
 
   it('Render the logo.', () => {
-    renderHeader();
-    const logo = screen.getByTestId('header-logo');
+    const logo = getByTestId('header-logo');
 
     expect(logo).toBeInTheDocument();
   });
 
   it('Render the navigation links.', () => {
-    renderHeader();
-
-    expect(screen.getByText(/ACCUEIL/i)).toBeInTheDocument();
-    expect(screen.getByText(/A PROPOS/i)).toBeInTheDocument();
+    expect(getByText(/ACCUEIL/i)).toBeInTheDocument();
+    expect(getByText(/A PROPOS/i)).toBeInTheDocument();
   });
 });

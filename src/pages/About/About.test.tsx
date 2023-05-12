@@ -4,6 +4,8 @@ import About from './About';
 import { appCtx } from 'contexts/app';
 import { render } from 'utils/tests';
 
+const { getByRole, getAllByTestId } = screen;
+
 describe('Render About correctly.', () => {
   beforeEach(() => {
     render(
@@ -30,15 +32,15 @@ describe('Render About correctly.', () => {
   });
 
   it('Render the cover', () => {
-    const cover = screen.getByRole('img');
+    const cover = getByRole('img');
 
     expect(cover).toBeInTheDocument();
     expect(cover).toHaveAttribute('alt', 'Paysage montagneux');
   });
 
   it('Render the cards list.', () => {
-    const list = screen.getAllByTestId('deploying-card-content');
+    const list = getAllByTestId('deploying-card-content');
 
-    expect(list.length).toBe(4);
+    expect(list).toHaveLength(4);
   });
 });

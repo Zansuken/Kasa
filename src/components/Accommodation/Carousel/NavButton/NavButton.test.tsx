@@ -2,38 +2,36 @@ import { render, screen } from '@testing-library/react';
 import NavButton from './NavButton';
 import { ComponentProps } from 'react';
 
-type Props = ComponentProps<typeof NavButton>;
+const { getByRole } = screen;
 
 describe('Render NavButton correctly.', () => {
-  const mockedProps = {
+  const mockedProps: ComponentProps<typeof NavButton> = {
     currentPic: 1,
     direction: 'right',
     onPicChange: () => undefined,
     totalPics: 5,
   };
 
-  const renderNavButton = (Props: Props) => render(<NavButton {...Props} />);
-
   it('Render the button.', () => {
-    renderNavButton({ ...mockedProps, direction: 'right' });
+    render(<NavButton {...mockedProps} />);
 
-    const button = screen.getByRole('button');
+    const button = getByRole('button');
 
     expect(button).toBeInTheDocument();
   });
 
   it('Render the button with the good className (right).', () => {
-    renderNavButton({ ...mockedProps, direction: 'right' });
+    render(<NavButton {...mockedProps} />);
 
-    const button = screen.getByRole('button');
+    const button = getByRole('button');
 
     expect(button).toHaveClass('root right');
   });
 
   it('Render the button with the good className (left).', () => {
-    renderNavButton({ ...mockedProps, direction: 'left' });
+    render(<NavButton {...mockedProps} direction="left" />);
 
-    const button = screen.getByRole('button');
+    const button = getByRole('button');
 
     expect(button).toHaveClass('root left');
   });

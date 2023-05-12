@@ -1,15 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import Footer from './Footer';
 
+const { getByText, getByTestId } = screen;
+
 describe('Render Footer correctly.', () => {
-  it('Render the copyrights.', () => {
+  beforeEach(() => {
     render(<Footer />);
-    expect(screen.getByText(/© 2020 Kasa. All rights reserved/i));
+  });
+
+  it('Render the copyrights.', () => {
+    expect(getByText(/© 2020 Kasa. All rights reserved/i));
   });
 
   it('Render the logo.', () => {
-    render(<Footer />);
-    const logo = screen.getByTestId('footer-logo');
+    const logo = getByTestId('footer-logo');
 
     expect(logo).toBeInTheDocument();
   });

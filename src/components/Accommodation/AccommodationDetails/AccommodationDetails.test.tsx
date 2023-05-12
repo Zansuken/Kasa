@@ -1,28 +1,33 @@
 import { render, screen } from '@testing-library/react';
 import AccommodationDetails from './AccommodationDetails';
+import { ComponentProps } from 'react';
 
-it('Render AccommodationDetails correctly.', () => {
-  const mockedProps = {
-    description: 'Votre maison loin de chez vous...',
-    equipments: [
-      'Parking',
-      'Sèche Cheveux',
-      'Machine à laver',
-      'Wi-fi',
-      'Cuisine équipée',
-      'Télévision',
-    ],
-  };
+describe('AccommodationDetails', () => {
+  const { getByText } = screen;
 
-  render(<AccommodationDetails {...mockedProps} />);
+  it('Render AccommodationDetails correctly.', () => {
+    const mockedProps: ComponentProps<typeof AccommodationDetails> = {
+      description: 'Votre maison loin de chez vous...',
+      equipments: [
+        'Parking',
+        'Sèche Cheveux',
+        'Machine à laver',
+        'Wi-fi',
+        'Cuisine équipée',
+        'Télévision',
+      ],
+    };
 
-  // Labels
-  expect(screen.getByText(/Description/i)).toBeInTheDocument();
-  expect(screen.getByText(/Équipements/i)).toBeInTheDocument();
+    render(<AccommodationDetails {...mockedProps} />);
 
-  // Contents
-  expect(screen.getByText(mockedProps.description)).toBeInTheDocument();
-  mockedProps.equipments.forEach((equipment) => {
-    expect(screen.getByText(equipment)).toBeInTheDocument();
+    // Labels
+    expect(getByText(/Description/i)).toBeInTheDocument();
+    expect(getByText(/Équipements/i)).toBeInTheDocument();
+
+    // Contents
+    expect(getByText(mockedProps.description)).toBeInTheDocument();
+    mockedProps.equipments.forEach((equipment) => {
+      expect(getByText(equipment)).toBeInTheDocument();
+    });
   });
 });

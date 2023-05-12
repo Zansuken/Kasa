@@ -1,27 +1,14 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import CollapsingCard from './CollapsingCard';
+import { ComponentProps } from 'react';
 
 describe('Render CollapsingCard correctly.', () => {
-  const MockedProps = {
-    PropsWithoutArray: {
-      content:
-        'Profitez du charme de la vie parisienne dans un magnifique appartement...',
-      label: 'Description',
-    },
-    PropsWithArray: {
-      content: [
-        'Parking',
-        'Sèche Cheveux',
-        'Machine à laver',
-        'Wi-fi',
-        'Cuisine équipée',
-        'Télévision',
-      ],
-      label: 'Description',
-    },
-  };
+  const { getByText, getByLabelText, getByTestId, getByRole } = screen;
 
-  const { PropsWithoutArray, PropsWithArray } = MockedProps;
+  const mockedProps: ComponentProps<typeof CollapsingCard> = {
+    label: 'Description',
+    content: '',
+  };
 
   const clickOnBtnEvent = (button: HTMLElement) =>
     fireEvent(
@@ -30,31 +17,32 @@ describe('Render CollapsingCard correctly.', () => {
     );
 
   describe('With string as content.', () => {
-    const { label, content } = PropsWithoutArray;
+    const { label } = mockedProps;
+
+    const content =
+      'Profitez du charme de la vie parisienne dans un magnifique appartement...';
+
+    beforeEach(() => {
+      render(<CollapsingCard {...mockedProps} content={content} />);
+    });
 
     it('Render the label.', () => {
-      render(<CollapsingCard {...PropsWithoutArray} />);
-      expect(screen.getByLabelText(label)).toBeInTheDocument();
+      expect(getByLabelText(label)).toBeInTheDocument();
     });
 
     it('Render the button.', () => {
-      render(<CollapsingCard {...PropsWithoutArray} />);
-
-      const button = screen.getByTestId('deploying-card');
+      const button = getByTestId('deploying-card');
 
       expect(button).toBeInTheDocument();
     });
 
     it('Render the content.', () => {
-      render(<CollapsingCard {...PropsWithoutArray} />);
-
-      expect(screen.getByText(content)).toBeInTheDocument();
+      expect(getByText(content)).toBeInTheDocument();
     });
 
     it('Change the className of content when clicking on the button.', () => {
-      render(<CollapsingCard {...PropsWithoutArray} />);
-      const content = screen.getByTestId('deploying-card-content');
-      const button = screen.getByTestId('deploying-card');
+      const content = getByTestId('deploying-card-content');
+      const button = getByTestId('deploying-card');
 
       expect(content).toHaveClass('content');
 
@@ -65,24 +53,33 @@ describe('Render CollapsingCard correctly.', () => {
   });
 
   describe('With string[] as content.', () => {
-    const { label, content } = PropsWithArray;
+    const { label } = mockedProps;
+
+    const content = [
+      'Parking',
+      'Sèche Cheveux',
+      'Machine à laver',
+      'Wi-fi',
+      'Cuisine équipée',
+      'Télévision',
+    ];
+
+    beforeEach(() => {
+      render(<CollapsingCard {...mockedProps} content={content} />);
+    });
 
     it('Render the label.', () => {
-      render(<CollapsingCard {...PropsWithArray} />);
-      expect(screen.getByLabelText(label)).toBeInTheDocument();
+      expect(getByLabelText(label)).toBeInTheDocument();
     });
 
     it('Render the button.', () => {
-      render(<CollapsingCard {...PropsWithArray} />);
-      const button = screen.getByTestId('deploying-card');
+      const button = getByTestId('deploying-card');
 
       expect(button).toBeInTheDocument();
     });
 
     it('Render the content.', () => {
-      render(<CollapsingCard {...PropsWithArray} />);
-
-      const list = screen.getByRole('list');
+      const list = getByRole('list');
       const { getAllByRole } = within(list);
       const items = getAllByRole('listitem');
 
@@ -90,9 +87,8 @@ describe('Render CollapsingCard correctly.', () => {
     });
 
     it('Change the className of content when clicking on the button.', () => {
-      render(<CollapsingCard {...PropsWithArray} />);
-      const content = screen.getByTestId('deploying-card-content');
-      const button = screen.getByTestId('deploying-card');
+      const content = getByTestId('deploying-card-content');
+      const button = getByTestId('deploying-card');
 
       expect(content).toHaveClass('content');
 
