@@ -37,7 +37,7 @@ const Home: FC = () => {
           <span>Chargement...</span>
         </div>
       )}
-      {!isFetching && <Content accommodations={accommodations} />}
+      {!isFetching && <Content accommodations={accommodations ?? []} />}
       {accommodations?.length === 0 && !isFetching && (
         <div className={classes['statusWrapper']}>
           <span>Il n&apos;y a aucun logement à afficher.</span>

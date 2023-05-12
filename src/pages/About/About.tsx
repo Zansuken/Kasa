@@ -13,7 +13,7 @@ const About: FC = () => {
   useEffect(() => {
     changeTabTitle('Kasa | À propos');
 
-    if (sections.length === 0) {
+    if (sections?.length === 0) {
       fetchData();
     }
   }, []);
@@ -28,7 +28,7 @@ const About: FC = () => {
         />
       </div>
       <section className={classes['aboutCards']}>
-        {sections.map(({ label, content }, index) => (
+        {sections?.map(({ label, content }, index) => (
           <CollapsingCard key={index} label={label} content={content} />
         ))}
       </section>

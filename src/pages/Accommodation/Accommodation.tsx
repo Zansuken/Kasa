@@ -14,12 +14,12 @@ const Accommodation: FC = () => {
   const [accommodation, setAccommodation] = useState<AccommodationType>();
 
   useEffect(() => {
-    if (accommodations.length === 0) {
+    if (accommodations?.length === 0) {
       fetchData();
     } else {
-      changeTabTitle(`Kasa | ${accommodations[0].title}`);
+      changeTabTitle(`Kasa | ${accommodations[0]?.title}`);
       setAccommodation(
-        accommodations.find((accommodation) => accommodation.id === logementId)
+        accommodations?.find((accommodation) => accommodation.id === logementId)
       );
     }
   }, [accommodations]);
