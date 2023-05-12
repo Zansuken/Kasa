@@ -24,7 +24,7 @@ const Home: FC = () => {
   useEffect(() => {
     changeTabTitle('Kasa | Accueil');
 
-    if (accommodations.length === 0) {
+    if (accommodations?.length === 0) {
       fetchAccommodations();
     }
   }, []);
