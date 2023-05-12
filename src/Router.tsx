@@ -11,17 +11,15 @@ export const CustomRouter: FC<PropsWithChildren> = ({ children }) => (
 
 export const Routes: FC = () => {
   return (
-    <CustomRouter>
-      <CustomRoutes>
-        <Route path="/Kasa/" element={<Home />}></Route>
-        <Route path="/" element={<Home />}></Route>
-        <Route
-          path="/Kasa/logements/:logementId"
-          element={<Accommodation />}
-        ></Route>
-        <Route path="/Kasa/a-propos" element={<About />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </CustomRoutes>
-    </CustomRouter>
+    <CustomRoutes>
+      <Route path="/Kasa/" element={<Home />}></Route>
+      <Route path="/" element={<Home />}></Route>
+      <Route
+        path="/Kasa/logements/:logementId"
+        element={<Accommodation />}
+      ></Route>
+      <Route path="/Kasa/a-propos" element={<About />}></Route>
+      <Route path="*" element={<NotFound />}></Route>
+    </CustomRoutes>
   );
 };
