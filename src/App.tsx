@@ -19,12 +19,13 @@ const App = () => (
       <CustomRouter>
         <Header />
         <Routes>
+          <Route path="/Kasa/" element={<Home />}></Route>
           <Route path="/" element={<Home />}></Route>
           <Route
-            path="/logements/:logementId"
+            path="/Kasa/logements/:logementId"
             element={<Accommodation />}
           ></Route>
-          <Route path="a-propos" element={<About />}></Route>
+          <Route path="/Kasa/a-propos" element={<About />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
         <Footer />
