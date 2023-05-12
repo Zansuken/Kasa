@@ -3,9 +3,7 @@ import { Endpoints } from './endpoints';
 import { AboutSection } from 'contexts/app';
 
 const BASE_URL =
-  process.env.NODE_ENV === 'production'
-    ? 'Kasa/static/'
-    : 'http://localhost:3000';
+  process.env.NODE_ENV === 'production' ? 'static' : 'http://localhost:3000';
 
 console.log(process.env);
 
