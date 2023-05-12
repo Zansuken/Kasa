@@ -2,7 +2,7 @@ import { screen, waitFor } from '@testing-library/react';
 import Accommodation from './Accommodation';
 import { Accommodation as AccommodationType } from 'types/accommodations';
 import { accommodationsCtx } from 'contexts/accommodations';
-import { CustomRouter } from 'App';
+import { CustomRouter } from 'Router';
 import { render } from 'utils/tests';
 
 const { getByText } = screen;

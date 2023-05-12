@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { CustomRouter } from 'App';
+import { CustomRouter } from 'Router';
 import NotFound from './NotFound';
 describe('Render NotFound correctly.', () => {
   const renderNotFound = () =>

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { CustomRouter } from 'App';
+import { CustomRouter } from 'Router';
 import Header from './Header';
 
 const { getByTestId, getByText } = screen;

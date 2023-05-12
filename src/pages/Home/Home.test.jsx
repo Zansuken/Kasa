@@ -1,7 +1,7 @@
 import { render } from 'utils/tests';
 import Home from './Home';
 import { accommodationsCtx } from 'contexts/accommodations';
-import { CustomRouter } from 'App';
+import { CustomRouter } from 'Router';
 import { screen, waitFor } from '@testing-library/react';
 
 describe('Home component', () => {

@@ -1,6 +1,6 @@
 import { render, screen, within } from '@testing-library/react';
 import Content from './Content';
-import { CustomRouter } from 'App';
+import { CustomRouter } from 'Router';
 import { ComponentProps } from 'react';
 
 describe('Content', () => {

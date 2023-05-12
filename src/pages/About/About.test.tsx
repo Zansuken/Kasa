@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { CustomRouter } from 'App';
+import { CustomRouter } from 'Router';
 import About from './About';
 import { appCtx } from 'contexts/app';
 import { render } from 'utils/tests';
